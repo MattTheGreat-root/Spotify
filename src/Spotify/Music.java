@@ -6,9 +6,14 @@ public class Music {
     public String title;
     public User singer;
     public int numberOfStream;
-    public static ArrayList<Music> allMusics;
+    public static ArrayList<Music> allMusics = new ArrayList<Music>();
 
-    public Music(String title, User singer, int numberOfStream) {}
+    public Music(String title, User singer) {
+        this.title = title;
+        this.singer = singer;
+        this.numberOfStream = 0;
+        allMusics.add(this);
+    }
 
 
     public static void play(Music music) {
@@ -17,7 +22,9 @@ public class Music {
     }
 
     @Override
-    public String toString() {}
+    public String toString() {
+        return title + " By " + singer + "...";
+    }
 
     public static ArrayList<Music> search(String title) {
         ArrayList<Music> ret = new ArrayList<Music>();

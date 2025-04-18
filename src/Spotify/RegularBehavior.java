@@ -1,7 +1,6 @@
 package Spotify;
 
 public class RegularBehavior implements UserBehavior {
-    //does it need constructor?
     int playingLimit = 5;
     @Override
     public void createPlaylist(String Title, User Owner) {
