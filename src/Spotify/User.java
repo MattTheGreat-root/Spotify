@@ -46,4 +46,7 @@ public class User {
     public UserBehavior getBehavior(){
         return this.behavior;
     }
+    public void addPlaylist (Playlist playlist){
+        this.playlists.add(playlist);
+    }
 }

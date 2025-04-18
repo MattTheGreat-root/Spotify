@@ -10,7 +10,7 @@ public class Music {
 
     public Music(String title, User singer, int numberOfStream) {}
 
-//static or not
+
     public static void play(Music music) {
         System.out.println("Playing: " + music);
         music.numberOfStream += 1;
