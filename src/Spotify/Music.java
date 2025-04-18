@@ -23,7 +23,7 @@ public class Music {
 
     @Override
     public String toString() {
-        return title + " By " + singer + "...";
+        return title + " By " + singer;
     }
 
     public static ArrayList<Music> search(String title) {
@@ -33,9 +33,7 @@ public class Music {
                 ret.add(music);
             }
         }
-        if (ret.isEmpty()) {
-            return null;
-        }
+        if (ret.isEmpty()) return null;
         return ret;
     }
 

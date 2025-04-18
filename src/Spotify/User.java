@@ -24,16 +24,25 @@ public class User {
         user.followerList.add(this);
     }
 
-    public void createPlaylist (String title, User owner){
-        this.behavior.createPlaylist(title, owner);
+    public void createPlaylist (String title){
+        this.behavior.createPlaylist(title, this);
     }
 
     public void playMusic (Music music){
         this.behavior.playMusic(music);
     }
 
-    public void buyPremium (User owner, int month){
-        this.behavior.buyPremium(owner, month);
+    public void buyPremium (int month){
+        this.behavior.buyPremium(this, month);
+    }
+
+    public Playlist getPlaylist(String title){
+        for(Playlist playlist : playlists){
+            if(playlist.getTitle().equals(title)){
+                return playlist;
+            }
+        }
+        return null;
     }
 
     public void setUserName(String username){
@@ -72,5 +81,10 @@ public class User {
 
     public void addPlaylist (Playlist playlist){
         this.playlists.add(playlist);
+    }
+
+    @Override
+    public String toString() {
+        return username;
     }
 }
